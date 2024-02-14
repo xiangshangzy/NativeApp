@@ -1,5 +1,6 @@
-import { Link, Stack } from 'expo-router';
-import { Image, Text, TextInput, View } from 'react-native';
+import { Button, Input, SearchBar, Text } from '@rneui/themed';
+import { Link, Stack, router } from 'expo-router';
+import { Image, TextInput, View } from 'react-native';
 
 function LogoTitle() {
   return (
@@ -13,9 +14,10 @@ function LogoTitle() {
 export default function Home() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home</Text>
+      <Button onPress={() => router.push('hello')}>Go to Details</Button>
       <TextInput />
-      <Text>Home Screen</Text>
-      <Link href={{ pathname: 'hello', params: {} }}>Go to Details</Link>
+
     </View>
   );
 }

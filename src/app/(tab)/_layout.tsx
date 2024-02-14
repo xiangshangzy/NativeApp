@@ -5,7 +5,6 @@ export default function TabLayout() {
     <Tabs screenOptions={{
       headerShown: false,
       tabBarLabelStyle: { fontSize: 16 },
-      tabBarStyle: {}
     }}>
       <Tabs.Screen
         name="index"
@@ -14,6 +13,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
+          headerShown:true,
+          headerTitle:'首页'
         }}
       />
       <Tabs.Screen
@@ -23,7 +24,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
-          tabBarBadge: 3,
+          headerShown:true,
+          headerTitle:'详情'
         }}
       />
       <Tabs.Screen
@@ -33,6 +35,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
+          headerShown:true,
+          headerTitle:'用户'
         }}
       />
     </Tabs>
