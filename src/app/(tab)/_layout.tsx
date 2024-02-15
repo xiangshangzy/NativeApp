@@ -9,12 +9,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarLabel: '首页',
+          tabBarLabel: '音乐',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-          headerShown:true,
-          headerTitle:'首页'
+          )
         }}
       />
       <Tabs.Screen
