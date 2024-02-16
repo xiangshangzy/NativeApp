@@ -12,12 +12,16 @@ function LogoTitle() {
 }
 
 export default function Home() {
-  const liked_cover = require('../../assets/image/liked_cover.png')
 
   return (
-    <View className='flex-1 items-center'>
+    <View className='flex-1 items-center text-white'>
       <Header />
-
+      <View className='w-full px-6'>
+        <Text className='text-xl'>Newest Songs</Text>
+        <View>
+          <MusicItem />
+        </View>
+      </View>
     </View>
   );
 }
@@ -27,20 +31,21 @@ function Header() {
     <View className='h-fit bg-gradient-to-b from-emerald-800 p-6 w-full'>
       <View>
         <Text className=' text-white text-3xl font-semibold mb-2'>Welcome back</Text>
-        <ListItem />
+        <Pressable className='relative h-14 group flex flex-row items-center rounded-md  gap-x-6 bg-neutral-100/10 active:bg-neutral-100/20 transition w-fit pr-4'>
+          <Image source={require('@/assets/image/liked_cover.png')} className='max-w-14 max-h-14' />
+          <Text className=' font-medium truncate py-5 text-lg'>Favorite Songs</Text>
+          <Pressable className=' rounded-full bg-green-500 p-2 active:scale-110 drop-shadow-md' onPressOut={() => router.push('login')}>
+            <MaterialCommunityIcons name='play' size={30} />
+          </Pressable>
+        </Pressable>
       </View>
     </View>
   )
 }
-function ListItem() {
+function MusicItem() {
   return (
-    <Pressable className='relative h-14 group flex flex-row items-center rounded-md  gap-x-6 bg-neutral-100/10 active:bg-neutral-100/20 transition w-fit pr-4'>
-      <Image source={require('@/assets/image/liked_cover.png')} className='max-w-14 max-h-14' />
-      <Text className=' font-medium truncate py-5 text-lg'>Favorite Songs</Text>
-      <Pressable className=' rounded-full bg-green-500 p-2 active:scale-110 drop-shadow-md' onPressOut={()=>router.push('login')}>
-        <MaterialCommunityIcons name='play' size={30}/>
-      </Pressable>
+    <Pressable className=' bg-neutral-400/5 active:bg-neutral-400/10 transition p-3'>
+      <Image />
     </Pressable>
   )
-
 }

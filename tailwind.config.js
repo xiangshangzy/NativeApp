@@ -9,4 +9,5 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
   plugins: [],
+  corePlugins: { preflight: false }
 };
